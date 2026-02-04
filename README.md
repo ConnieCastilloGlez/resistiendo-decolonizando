@@ -14,9 +14,11 @@
 
 13:00 - 14:00 | Almuerzo.
 
-14:00 - 16:00 | TRABAJO AUTÓNOMO I: Curaduría Personal.
+14:00 - 15:00 | TRABAJO AUTÓNOMO I: Curaduría Personal.
 
-Tarea: Los profesores deben terminar de describir sus 15 objetos en Tropy, exportar el CSV e importarlo a Baserow. Deben personalizar su base de datos con al menos 3 campos propios de su disciplina (ej: Tipo de soporte, Siglo, Estado de conservación).
+Terminar de describir sus 15 objetos en Tropy, exportar el CSV e importarlo a Baserow. Deben personalizar su base de datos con al menos 3 campos propios de su disciplina (ej: Tipo de soporte, Siglo, Estado de conservación).
+
+15:00 - 16:00 | Revisión de base de datos, problemas comunes.
 
 Jueves 5 de febrero: La Expansión (Web Scraping y Limpieza)
 09:00 - 10:30 | Taller de Raspado: Uso de Google Colab (Python).
@@ -27,9 +29,11 @@ Jueves 5 de febrero: La Expansión (Web Scraping y Limpieza)
 
 13:00 - 14:00 | Almuerzo.
 
-14:00 - 16:00 | TRABAJO AUTÓNOMO II: Integración de Acervos.
+14:00 - 15:00 | TRABAJO AUTÓNOMO II: Integración de Acervos.
 
-Tarea: Los profesores deben realizar un raspado exitoso de una fuente externa relacionada con su tema. Deben "limpiar" esos datos en un Baserow (unificar formatos de fecha, corregir nombres) y mezclarlos con sus 15 registros iniciales.
+Deben realizar un raspado exitoso de una fuente externa relacionada con su tema. Deben "limpiar" esos datos en un Baserow (unificar formatos de fecha, corregir nombres) y mezclarlos con sus 15 registros iniciales.
+
+15:00 - 16:00 | Revisión del raspado y solución de problemas.
 
 16:00 - 17:00 | Ética del dato: Debate sobre derechos de autor, repositorios abiertos y "quién es dueño" de lo que acabamos de raspar.
 
@@ -42,11 +46,11 @@ Viernes 6 de febrero: La Publicación y Soberanía Digital
 
 13:00 - 14:00 | Almuerzo.
 
-14:00 - 16:00 | TRABAJO AUTÓNOMO III: Curaduría de la Exhibición.
+14:00 - 15:00 | TRABAJO AUTÓNOMO III: Curaduría de la Exhibición.
 
-Tarea: Personalizar el sitio web. Deben redactar un texto introductorio que explique el sentido del micro-archivo. Asegurarse de que las imágenes carguen correctamente y el sitio sea funcional.
+Personalizar el sitio web. Deben redactar un texto introductorio que explique el sentido del micro-archivo. Asegurarse de que las imágenes carguen correctamente y el sitio sea funcional.
 
-16:00 - 17:00 | Cierre: Presentación de los proyectos.
+15:00 - 17:00 | Cierre: Presentación de los proyectos.
 
 ## Instrucciones generales
 

@@ -136,6 +136,54 @@ function normalizarTexto(texto) {
 }
 
 /**
+ * Convierte el valor de un campo "expediente" de Baserow a una URL usable por <img>.
+ * - Si ya es string, lo devuelve.
+ * - Si es array de archivos, toma el primero.
+ * - Si existe thumbnail, prioriza uno.
+ * - Si no hay nada usable, devuelve null.
+ */
+function obtenerURLImagenBaserow(valor, opciones = {}) {
+  const {
+    // Cambia el orden si quieres otro tamaño por defecto
+    prioridadThumbnails = ['large', 'medium', 'small', 'tiny'],
+    usarOriginalSiNoHayThumb = true,
+  } = opciones;
+
+  if (!valor) return null;
+
+  // Caso 1: ya viene como URL string
+  if (typeof valor === 'string') {
+    const s = valor.trim();
+    return s.length ? s : null;
+  }
+
+  // Caso 2: a veces puede venir como objeto directo
+  const archivo = Array.isArray(valor) ? valor[0] : valor;
+
+  if (!archivo || typeof archivo !== 'object') return null;
+
+  // Algunas instalaciones devuelven thumbnails como objeto:
+  // { thumbnails: { small: { url }, ... } } o { thumbnails: { small: "url" } }
+  const thumbs = archivo.thumbnails;
+
+  if (thumbs && typeof thumbs === 'object') {
+    for (const key of prioridadThumbnails) {
+      const t = thumbs[key];
+      if (!t) continue;
+      if (typeof t === 'string' && t.trim()) return t.trim();
+      if (typeof t === 'object' && typeof t.url === 'string' && t.url.trim()) return t.url.trim();
+    }
+  }
+
+  // Si no hay thumbnails, usar url original del archivo
+  if (usarOriginalSiNoHayThumb && typeof archivo.url === 'string' && archivo.url.trim()) {
+    return archivo.url.trim();
+  }
+
+  return null;
+}
+
+/**
  * Extrae texto de todos los campos de un proyecto
  */
 function extraerTextoCompleto(proyecto) {
@@ -191,10 +239,12 @@ function mostrarProyectos(proyectos) {
   }
 
   proyectos.forEach((proyecto) => {
+    const imagenURL = obtenerURLImagenBaserow(proyecto[TABLA_PROYECTOS.campos.imagen]);
+
     const tarjeta = crearTarjetaProyecto({
       titulo: proyecto[TABLA_PROYECTOS.campos.titulo],
       descripcion: proyecto[TABLA_PROYECTOS.campos.descripcion],
-      imagen: proyecto[TABLA_PROYECTOS.campos.imagen],
+      imagen: imagenURL, // <-- ahora siempre es string URL o null
       enlace: proyecto[TABLA_PROYECTOS.campos.enlace],
       registro: proyecto,
       campos: camposTablaMemo,

@@ -11,7 +11,8 @@ import sitemap from 'vite-plugin-sitemap';
 
 // ⭐ URL DEL SITIO - CAMBIAR AQUÍ
 const urlSitio = 'https://conniecastilloglez.github.io/resistiendo-decolonizando';
-
+ 
+ 
 export default defineConfig({
   // IMPORTANTE: Descomenta y ajusta según donde publiques en GitHub Pages
   base: '/resistiendo-decolonizando/', // Para proyecto en repositorio
